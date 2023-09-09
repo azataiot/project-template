@@ -8,6 +8,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    target-branch: "dev"
+    target-branch: "update/github-actions"
     labels:
       - "update"
