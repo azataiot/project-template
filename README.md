@@ -80,4 +80,4 @@ See [SECURITY.md](SECURITY.md) for more information.
 
 ## Founding
 
-See [FOUNDING.md](FOUNDING.md) for more information.
+If you like this project, consider supporting the project by [Sponsorship](https://github.com/sponsors/azataiot)
