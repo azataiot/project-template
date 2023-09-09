@@ -2,6 +2,7 @@
 
 <a href="https://github.com/azataiot/project-template/generate"><img src="https://img.shields.io/badge/use%20this-template-blue?logo=github" alt="use-this-repo-badge"></a>
 [![Code Quality](https://github.com/azataiot/project-template/actions/workflows/code-quality.yml/badge.svg)](https://github.com/azataiot/project-template/actions/workflows/code-quality.yml)
+
 A project template to use for new GitHub repositories
 
 ## Features
@@ -16,6 +17,9 @@ A project template to use for new GitHub repositories
 - [x] dependabot.yml
 - [x] FOUNDING
 - [x] Makefile (try `make help`)
+- [x] pre-commit hooks
+- [x] Automated Code Quality Checks
+- [x] Automated Releasing
 
 ## Usage
 
