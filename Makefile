@@ -1,3 +1,4 @@
+.PHONY: help
 .DEFAULT_GOAL := help
 
 # -- global targets--
@@ -92,11 +93,19 @@ pr: ensure-clean
 		echo "Current branch is not a release or hotfix branch. Please switch to a release or hotfix branch before creating a PR to main."; \
 	fi
 
-## Set the version. Use: make version v=1.2.3
+## Set or bump the version
 version:
-	@if [ "$(v)" ]; then \
-		echo "$(v)" > .VERSION; \
-		echo "Version set to $(v)"; \
+	@if [ ! -f .VERSION ]; then \
+		echo "0.0.1" > .VERSION; \
+		echo "No current version found. Created version 0.0.1"; \
+	fi; \
+	echo "Current version: $$(cat .VERSION)"; \
+	read -p "Enter new version: " new_version; \
+	if [ "$$new_version" ]; then \
+		echo "$$new_version" > .VERSION; \
+		echo "Version set to $$new_version"; \
+		git add .VERSION; \
+		git commit -m "Bump version to $$new_version"; \
 	else \
-		echo "Please provide a version number. Use: make version v=YOUR_VERSION_NUMBER"; \
+		echo "No version input provided. Version remains unchanged."; \
 	fi
