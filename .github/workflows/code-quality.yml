@@ -5,6 +5,7 @@ on:
     branches: [ 'main', 'dev' ]
     types:
       - opened
+      - synchronize
   push:
     branches: [ 'main', 'dev' ]
   workflow_dispatch:
