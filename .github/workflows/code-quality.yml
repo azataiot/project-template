@@ -5,14 +5,8 @@ on:
     branches: [ 'main', 'dev' ]
     types:
       - opened
-    paths-ignore:
-      - 'docs/**'
-      - 'README.md'
   push:
     branches: [ 'main', 'dev' ]
-    paths-ignore:
-      - 'docs/**'
-      - 'README.md'
   workflow_dispatch:
     if: github.actor != 'dependabot[bot]'
 
