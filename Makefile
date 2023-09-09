@@ -95,7 +95,7 @@ pr: ensure-clean
 ## Set the version. Use: make version v=1.2.3
 version:
 	@if [ "$(v)" ]; then \
-		echo "$(v)" > VERSION; \
+		echo "$(v)" > .VERSION; \
 		echo "Version set to $(v)"; \
 	else \
 		echo "Please provide a version number. Use: make version v=YOUR_VERSION_NUMBER"; \
