@@ -60,11 +60,14 @@ push: ensure-clean
 prdev: ensure-clean
 	@CURRENT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD); \
 	if [[ "$$CURRENT_BRANCH" == release/* ]] || [[ "$$CURRENT_BRANCH" == hotfix/* ]]; then \
-		read -p "You are on a $$CURRENT_BRANCH branch. It's recommended to PR release and hotfix branches to main. Do you want to continue creating a PR to dev? (y/N): " confirm && [[ $$confirm == [yY] || $$confirm == [yY][eE][sS] ]] || exit 1; \
+		read -p "You are on a $$CURRENT_BRANCH branch. It's recommended to PR release and hotfix branches to main. Do you want to continue creating a PR to dev? (y/N): " confirm; \
+		[[ -z "$$confirm" ]] && confirm="N"; \
+		[[ $$confirm == [yY] || $$confirm == [yY][eE][sS] ]] || exit 1; \
 	fi; \
 	echo "Creating PR from $$CURRENT_BRANCH to dev branch..."; \
 	gh pr create --base dev --head $$CURRENT_BRANCH; \
 	echo "Done!";
+
 
 
 
