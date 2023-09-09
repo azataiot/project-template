@@ -13,6 +13,7 @@ A project template to use for new GitHub repositories
 - [x] README GUIDE
 - [x] dependabot.yml
 - [x] FOUNDING
+- [x] Makefile (try `make help`)
 
 ## Usage
 
