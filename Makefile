@@ -91,4 +91,3 @@ pr: ensure-clean
 	else \
 		echo "Current branch is not a release or hotfix branch. Please switch to a release or hotfix branch before creating a PR to main."; \
 	fi
-
