@@ -7,7 +7,7 @@ on:
       - opened
       - synchronize
   push:
-    branches: [ 'main', 'dev' ]
+    branches: [ 'dev' ]
   workflow_dispatch:
     if: github.actor != 'dependabot[bot]'
 
