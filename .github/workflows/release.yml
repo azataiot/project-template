@@ -6,9 +6,16 @@ on:
     types:
       - closed
       - synchronize
+  workflow_dispatch:
 
 jobs:
   release:
+    env:
+      GH_TOKEN: ${{ github.token }}
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
@@ -24,5 +31,3 @@ jobs:
           gh release create $version \
             --title "Release $version" \
             --generate-notes
-        env:
-          GH_TOKEN: ${{ github.token }}
