@@ -1,5 +1,7 @@
 # project-template
 
+<a href="https://github.com/azataiot/project-template/generate"><img src="https://img.shields.io/badge/use%20this-template-blue?logo=github" alt="use-this-repo-badge"></a>
+[![Code Quality](https://github.com/azataiot/project-template/actions/workflows/code-quality.yml/badge.svg)](https://github.com/azataiot/project-template/actions/workflows/code-quality.yml)
 A project template to use for new GitHub repositories
 
 ## Features
@@ -19,7 +21,7 @@ A project template to use for new GitHub repositories
 
 ### Create a new repository from this template
 
-<a href="https://github.com/azataiot/project-template/generate"><img src="https://img.shields.io/badge/use%20this-template-blue?logo=github" alt="use-this-repo-badge"></a>
+
 
 1. [Click here](https://github.com/azataiot/project-template/generated) to create a new repository with this template.
 2. Select and Add a license.
