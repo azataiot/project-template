@@ -30,6 +30,22 @@ A project template to use for new GitHub repositories
 2. Run `pre-commit install` to install the pre-commit hooks.
 3. Run `make pre-commit` to run the pre-commit hooks on all files.
 
+### Setup GitHub Branch Protection
+
+1. Go to `Settings` > `Branches` > `Branch protection rules` > `Add rule`
+2. Add the following rules:
+   - `main`
+     - Require a pull request before merging
+     - Require status checks to pass before merging
+     - Require branches to be up-to-date before merging
+     - Add `linting` status checks ( and others if you created them )
+     - Do not allow bypassing the above settings
+   - `dev`
+     - Require a pull request before merging
+     - Require status checks to pass before merging
+     - Add `linting` status checks ( and others if you created them )
+
+
 ## Branching Strategy
 
 - `main`: The main branch. This branch is protected and cannot be pushed directly. (PRs must be made to `dev` instead
