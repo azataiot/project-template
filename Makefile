@@ -91,3 +91,12 @@ pr: ensure-clean
 	else \
 		echo "Current branch is not a release or hotfix branch. Please switch to a release or hotfix branch before creating a PR to main."; \
 	fi
+
+## Set the version. Use: make version v=1.2.3
+version:
+	@if [ "$(v)" ]; then \
+		echo "$(v)" > VERSION; \
+		echo "Version set to $(v)"; \
+	else \
+		echo "Please provide a version number. Use: make version v=YOUR_VERSION_NUMBER"; \
+	fi
