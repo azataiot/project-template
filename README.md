@@ -13,13 +13,22 @@ A project template to use for new GitHub repositories
 - [x] README GUIDE
 - [x] dependabot.yml
 - [x] FOUNDING
+- [x] Makefile (try `make help`)
 
 ## Usage
 
+### Create a new repository from this template
+
 <a href="https://github.com/azataiot/project-template/generate"><img src="https://img.shields.io/badge/use%20this-template-blue?logo=github" alt="use-this-repo-badge"></a>
 
-1. [Use this template](https://github.com/azataiot/project-template/generated) to create a new repository.
+1. [Click here](https://github.com/azataiot/project-template/generated) to create a new repository with this template.
 2. Select and Add a license.
+
+### Initialize and install `pre-commit` hooks
+
+1. Install [pre-commit](https://pre-commit.com/#install). (skip this step if you already have pre-commit installed)
+2. Run `pre-commit install` to install the pre-commit hooks.
+3. Run `make pre-commit` to run the pre-commit hooks on all files.
 
 ## Branching Strategy
 

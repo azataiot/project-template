@@ -10,7 +10,7 @@ We welcome many different types of contributions including:
 
 Fix a bug, or add a new feature. This will help this project more robust and complete.
 
-### Writing documentation 
+### Writing documentation
 
 Fix a typo, or add a new page. This will help users understand this project better.
 
@@ -51,7 +51,7 @@ git checkout -b <branch-name>
 
 ### Make changes
 
-Make changes to the files on your local machine. 
+Make changes to the files on your local machine.
 
 ### Commit changes
 
@@ -87,7 +87,7 @@ Sync your forked repo with the original repo.
 
 ```bash
 git remote add upstream <repo>
-git fetch upstream 
+git fetch upstream
 git checkout main
 git merge upstream/main
 git push origin main
@@ -96,5 +96,3 @@ git push origin main
 ## Code of Conduct
 
 Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
-
-

@@ -1,0 +1,25 @@
+name: Code Quality
+
+on:
+  pull_request:
+    branches: [ 'main', 'dev' ]
+    types:
+      - opened
+    paths-ignore:
+      - 'docs/**'
+  workflow_dispatch:
+    if: github.actor != 'dependabot[bot]'
+
+permissions:
+  contents: read
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip' # caching pip dependencies
+      - uses: pre-commit/action@v3.0.0
