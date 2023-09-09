@@ -25,8 +25,6 @@ A project template to use for new GitHub repositories
 
 ### Create a new repository from this template
 
-
-
 1. [Click here](https://github.com/azataiot/project-template/generated) to create a new repository with this template.
 2. Select and Add a license.
 
@@ -40,17 +38,16 @@ A project template to use for new GitHub repositories
 
 1. Go to `Settings` > `Branches` > `Branch protection rules` > `Add rule`
 2. Add the following rules:
-   - `main`
-     - Require a pull request before merging
-     - Require status checks to pass before merging
-     - Require branches to be up-to-date before merging
-     - Add `linting` status checks ( and others if you created them )
-     - Do not allow bypassing the above settings
-   - `dev`
-     - Require a pull request before merging
-     - Require status checks to pass before merging
-     - Add `linting` status checks ( and others if you created them )
-
+    - `main`
+        - Require a pull request before merging
+        - Require status checks to pass before merging
+        - Require branches to be up-to-date before merging
+        - Add `linting` status checks ( and others if you created them )
+        - Do not allow bypassing the above settings
+    - `dev`
+        - Require a pull request before merging
+        - Require status checks to pass before merging
+        - Add `linting` status checks ( and others if you created them )
 
 ## Branching Strategy
 
@@ -64,3 +61,23 @@ A project template to use for new GitHub repositories
   minor bug fixes. These branches are branched off from 'dev' and must merge back into `main` and `dev`.
 - `hotfix/*`: The 'hotfix/*' branches are used to develop fixes for the current release. These branches are branched off
   from `main` and must merge back into `main`.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+
+## License
+
+See [LICENSE](LICENSE) for more information.
+
+## Code of Conduct
+
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for more information.
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for more information.
+
+## Founding
+
+See [FOUNDING.md](FOUNDING.md) for more information.
