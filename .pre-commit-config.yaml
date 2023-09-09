@@ -1,5 +1,5 @@
 exclude: '^docs/'
-default_stages: [commit]
+default_stages: [ commit ]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -12,7 +12,7 @@ repos:
       - id: check-docstring-first
       - id: detect-private-key
       - id: check-added-large-files
-        args: ['--maxkb=1024']
+        args: [ '--maxkb=1024' ]
 
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 ci:
