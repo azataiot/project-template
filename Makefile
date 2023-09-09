@@ -59,13 +59,13 @@ push: ensure-clean
 ## Create PR to dev branch
 prdev: ensure-clean
 	@CURRENT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD); \
-	if [[ "$$CURRENT_BRANCH" != release/* ]] && [[ "$$CURRENT_BRANCH" != hotfix/* ]]; then \
-		echo "Creating PR from $$CURRENT_BRANCH to dev branch..."; \
-		gh pr create --base dev --head $$CURRENT_BRANCH; \
-		echo "Done!"; \
-	else \
-		echo "Release and hotfix branches should be PR'd to main. Please switch to a different branch before creating a PR to dev."; \
-	fi
+	if [[ "$$CURRENT_BRANCH" == release/* ]] || [[ "$$CURRENT_BRANCH" == hotfix/* ]]; then \
+		read -p "You are on a $$CURRENT_BRANCH branch. It's recommended to PR release and hotfix branches to main. Do you want to continue creating a PR to dev? (y/N): " confirm && [[ $$confirm == [yY] || $$confirm == [yY][eE][sS] ]] || exit 1; \
+	fi; \
+	echo "Creating PR from $$CURRENT_BRANCH to dev branch..."; \
+	gh pr create --base dev --head $$CURRENT_BRANCH; \
+	echo "Done!";
+
 
 
 ## Remove current branch and checkout dev
