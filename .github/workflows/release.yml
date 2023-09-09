@@ -1,0 +1,25 @@
+name: Automatic Release
+
+on:
+  push:
+    branches: [ 'main']
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Get version from .VERSION file
+      id: get_version
+      run: echo "version=$(cat .VERSION)" >> $GITHUB_ENV
+
+    - name: Create GitHub Release with auto-generated notes
+      run: |
+        gh release create $version \
+          --title "Release $version" \
+          --generate-notes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

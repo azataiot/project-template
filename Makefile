@@ -1,3 +1,4 @@
+.PHONY: help
 .DEFAULT_GOAL := help
 
 # -- global targets--
@@ -48,9 +49,11 @@ push: ensure-clean
 	if [[ $$BRANCH_NAME == release-* ]] || [[ $$BRANCH_NAME == hotfix-* ]]; then \
 		TAG_NAME=$(shell git describe --tags --abbrev=0); \
 		echo "Pushing $$TAG_NAME tag..."; \
-		git push origin $$TAG_NAME; \
+		git push origin $$TAG_NAME --force-with-lease; \
 	fi; \
 	echo "Done!";
+
+
 
 
 ## Create PR to dev branch
@@ -90,4 +93,21 @@ pr: ensure-clean
 		echo "Done!"; \
 	else \
 		echo "Current branch is not a release or hotfix branch. Please switch to a release or hotfix branch before creating a PR to main."; \
+	fi
+
+## Set or bump the version
+version:
+	@if [ ! -f .VERSION ]; then \
+		echo "0.0.1" > .VERSION; \
+		echo "No current version found. Created version 0.0.1"; \
+	fi; \
+	echo "Current version: $$(cat .VERSION)"; \
+	read -p "Enter new version: " new_version; \
+	if [ "$$new_version" ]; then \
+		echo "$$new_version" > .VERSION; \
+		echo "Version set to $$new_version"; \
+		git add .VERSION; \
+		git commit -m "Bump version to $$new_version"; \
+	else \
+		echo "No version input provided. Version remains unchanged."; \
 	fi
