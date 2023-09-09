@@ -44,6 +44,8 @@ pre-commit:
 ## Push current branch
 push: ensure-clean
 	@BRANCH_NAME=$(shell git rev-parse --abbrev-ref HEAD); \
+	echo "Updating $$BRANCH_NAME branch..."; \
+	git pull --rebase origin $$BRANCH_NAME; \
 	echo "Pushing to $$BRANCH_NAME branch..."; \
 	git push origin $$BRANCH_NAME; \
 	if [[ $$BRANCH_NAME == release-* ]] || [[ $$BRANCH_NAME == hotfix-* ]]; then \
@@ -52,6 +54,7 @@ push: ensure-clean
 		git push origin $$TAG_NAME --force-with-lease; \
 	fi; \
 	echo "Done!";
+
 
 
 ## Create PR to dev branch
