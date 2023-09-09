@@ -49,7 +49,7 @@ push: ensure-clean
 	if [[ $$BRANCH_NAME == release-* ]] || [[ $$BRANCH_NAME == hotfix-* ]]; then \
 		TAG_NAME=$(shell git describe --tags --abbrev=0); \
 		echo "Pushing $$TAG_NAME tag..."; \
-		git push origin $$TAG_NAME; --force-with-lease \
+		git push origin $$TAG_NAME --force-with-lease; \
 	fi; \
 	echo "Done!";
 
